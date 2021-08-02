@@ -2,13 +2,17 @@
   "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
-    "build":  "webpack --config build/webpack.config.js",
+    "dev": "webpack-dev-server --config build/webpack.config.js --hot --devtool source-map ",
+    "build": "webpack --watch --config build/webpack.config.js",
     "build2": "webpack --config webpack.config.js"
   },
   "dependencies": {},
   "devDependencies": {
     "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^2.1.0",
     "style-loader": "^0.18.2",
-    "webpack": "^3.4.0"
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.6.1"
   }
 }

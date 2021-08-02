@@ -18,5 +18,10 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
       }
     ]
+  },
+  devServer:{
+    headers: { // response headers
+      'X-foo':'jcl' 
+    }
   }
 };
