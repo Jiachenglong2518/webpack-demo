@@ -2,9 +2,10 @@
   "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
-    "dev": "webpack-dev-server --config build/webpack.config.js --hot --devtool source-map ",
+    "dev": "webpack-dev-server --hot",
     "build": "webpack --watch --config build/webpack.config.js",
-    "build2": "webpack --config webpack.config.js"
+    "build2": "webpack --config webpack.config.js",
+    "build3": "webpack-dev-server --hot"
   },
   "dependencies": {},
   "devDependencies": {
