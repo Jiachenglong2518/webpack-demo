@@ -1,6 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin  = require("extract-text-webpack-plugin")
 const path_url = './'
+console.log("__dirname:" + __dirname);
+console.log(path.resolve(__dirname, path_url + 'dist'));
 console.log(1);
 module.exports = {
   // JS 执行入口文件
@@ -22,6 +24,18 @@ module.exports = {
           use: ['css-loader'],
         })
       },
+      {
+        test: /\.js$/,
+        use:[
+          {
+            loader: "babel-loader",
+            options: {
+              // ?cacheDirectory 表示传给 babel-loader 的参数，用于缓存 babel 编译结果加快重新编译速度
+              cacheDirectory: true
+            }
+          }
+        ],
+      },
     ]
   },
   plugins: [
@@ -33,6 +47,11 @@ module.exports = {
   devServer:{
     headers: { // response headers
       'X-foo':'jcl' 
-    }
+    },
+    // inline: false
+  },
+  externals: {
+    // 把导入语句里的 jquery 替换成运行环境里的全局变量 jQuery
+    jquery: 'jQuery'
   }
 };
