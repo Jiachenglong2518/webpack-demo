@@ -2,7 +2,7 @@
   "name": "dive-into-webpack",
   "version": "1.0.0",
   "scripts": {
-    "dev": "webpack-dev-server  --hot ",
+    "dev": "webpack-dev-server  --hot --port 8082 ",
     "build": "webpack --watch --config build/webpack.config.js",
     "build2": "webpack --config webpack.config.js"
   },
@@ -16,6 +16,7 @@
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.1.0",
     "style-loader": "^0.18.2",
+    "url-loader": "^4.1.1",
     "webpack": "^3.4.0",
     "webpack-dev-server": "^2.6.1"
   }

@@ -8,12 +8,15 @@ module.exports = {
   // JS 执行入口文件
   entry: {
     main: path_url + 'main.js',
+    v:path_url + 'main2.js',
   },
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
-    filename: 'bundle.js',
+    filename: '[name].js',
     // 输出文件都放到 dist 目录下
-    path: path.resolve(__dirname, path_url + 'dist'),
+    // path: path.resolve(__dirname, path_url + 'dist'),
+    path: __dirname + '/dist',
+    // publicPath: 'https://cdn.example.com/assets/[fullhash]/',
   },
   module: {
     rules: [
@@ -36,6 +39,15 @@ module.exports = {
           }
         ],
       },
+      {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader',
+          options: {
+              limit: 5000,
+              name: '[name].[hash:8].[ext]',
+              outputPath:'images/'
+          }
+      }
     ]
   },
   plugins: [

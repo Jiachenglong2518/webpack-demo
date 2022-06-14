@@ -4,7 +4,9 @@ const path_url = '../'
 console.log(1);
 module.exports = {
   // JS 执行入口文件
-  entry: './main.js',
+  entry: {
+    main:"./main.js"
+  },
   output: {
     // 把所有依赖的模块合并输出到一个 bundle.js 文件
     filename: 'bundle.js',
